@@ -1,0 +1,213 @@
+<body class="all">
+  <section class="Header justify-content-between">
+    <div class="header-info">
+      <h1 class="h">
+        Get in Touch with Us Today! <i class="bi hover1 bi-arrow-right"></i>
+      </h1>
+      <p class="pt-4">
+        At NexGen, we value your inquiries, feedback, and collaborations.
+        Whether you are interested in our digital services, have questions about
+        our projects, or want to explore potential partnerships, we encourage
+        you to reach out to our dedicated team.
+      </p>
+    </div>
+    <div class="right-side">
+      <div class="right-side-info">
+        <div class="info mt-3">
+          <span class="text-white-50">Clients</span>
+          <p class="nom">200+</p>
+        </div>
+      </div>
+      <div class="right-side-info pt-3">
+        <span class="text-white-50 pt-4">HAPPY CLIENTS</span>
+        <p class="nom">100%</p>
+      </div>
+      <div class="right-side-info pt-2">
+        <span class="text-white-50">Years Of Experience</span>
+        <p class="nom">10+</p>
+      </div>
+
+      <div class="right-side-info">
+        <div class="info mt-4">
+          <span class="text-white-50">PROJECTS</span>
+          <p class="nom">280+</p>
+        </div>
+      </div>
+      <div class="right-side-info">
+        <div class="info mt-4">
+          <span class="text-white-50">FOLLOWER</span>
+          <p class="nom">420K</p>
+        </div>
+      </div>
+      <div class="right-side-info p-3">
+        <span class="text-white-50 d-block" class="fs-5">Reach Us</span
+        ><i class="bi mt-1 py-2 bi-arrow-down"></i>
+      </div>
+    </div>
+  </section>
+  <section class="forms pt-1">
+    <div class="links p-4 text-white">
+      <div class="btns">
+        <button>PHONE NUMBERS</button>
+        <button>EMAILS</button>
+        <button>OFFICE LOCATIONS</button>
+      </div>
+      <div class="emails">
+        <div class="email-info">
+          <p class="">General Inquries</p>
+          <div class="email">
+            <span>INFO.com</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </div>
+        </div>
+        <div class="email-info mt-3 mb-3">
+          <p class="">Business Collaborations</p>
+          <div class="email">
+            <span>partnerships&#64;NexGen.com</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </div>
+        </div>
+        <div class="email-info">
+          <p class="">Job Opportunities</p>
+          <div class="email">
+            <span>careers&#64;NexGen.com</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form" id="form">
+      <form class="pb-5" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="name">
+          <div class="name-info">
+            <label for="firstName" class="from-label">First Name</label>
+            <input
+              class="input-group text-white"
+              type="text"
+              placeholder="Enter First Name"
+              id="firstName"
+              class="form-control"
+              formControlName="firstName"
+            />
+            @if (form.controls['firstName'].touched &&
+            form.controls['firstName'].invalid) {
+            <div>
+              @if (form.controls['firstName'].errors &&
+              form.controls['firstName'].errors['required']) {
+              <span class="text-danger"> First Name is Required </span>
+              } @if (form.controls['firstName'].errors &&
+              form.controls['firstName'].errors['minlength']) {
+              <span class="text-danger">
+                First Name is Minmum 3 charcters
+              </span>
+              } @if (form.controls['firstName'].errors &&
+              form.controls['firstName'].errors['maxlength']) {
+              <span class="text-danger">
+                First Name is Maximum length 10 charcters
+              </span>
+              }
+            </div>
+            }
+          </div>
+          <div class="name-info">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              id="lastName"
+              placeholder="Enter Last Name"
+            />
+            @if (form.controls['lastName'].touched &&
+            form.controls['lastName'].invalid) {
+            <div>
+              @if (form.controls['lastName'].errors &&
+              form.controls['lastName'].errors['required']) {
+              <span class="text-danger"> Last Name is Required </span>
+              } @if (form.controls['lastName'].errors &&
+              form.controls['lastName'].errors['minlength']) {
+              <span class="text-danger"> Last Name is Minmum 3 charcters </span>
+              } @if (form.controls['lastName'].errors &&
+              form.controls['lastName'].errors['maxlength']) {
+              <span class="text-danger">
+                Last Name is Maximum length 10 charcters
+              </span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="col mb-3 name-info">
+            <label>Enter email:</label>
+            <input
+              type="text"
+              formControlName="email"
+              placeholder="Enter email"
+              class="form-control"
+            />
+            <label class="text-danger" *ngIf="getError(form.get('email'))">
+              {{ getError(form.get("email")) }}
+            </label>
+          </div>
+          <div class="name-info">
+            <label for="phone">Phone Number:</label> <br />
+            <input
+              placeholder="Enter Your Phone"
+              ng2TelInput
+              (keypress)="numericOnly($event)"
+              type="text"
+              formControlName="phone"
+              class="form-control"
+            />
+            @if (form.controls['phone'].touched &&
+            form.controls['phone'].invalid) {
+            <div>
+              @if (form.controls['phone'].errors &&
+              form.controls['phone'].errors['required']) {
+              <span class="text-danger"> Phone Number is Required </span>
+              } @if (form.controls['phone'].errors &&
+              form.controls['phone'].errors['minlength']) {
+              <span class="text-danger">
+                Phone Number is Minmum 10 digits
+              </span>
+              }
+            </div>
+            }
+          </div>
+        </div>
+        <div class="pt-3">
+          <label class="pb-3 form-label" for="userMessage">Messege</label>
+          <textarea
+            placeholder="Enter Your Messege"
+            class="form-control"
+            cols="50"
+            rows="5"
+            formControlName="userMessage"
+            id="userMessage"
+          ></textarea>
+          @if (form.controls['userMessage'].touched &&
+          form.controls['userMessage'].invalid) {
+          <div>
+            @if (form.controls['userMessage'].errors &&
+            form.controls['userMessage'].errors['required']) {
+            <span class="text-danger"> Message is Required </span>
+            }
+          </div>
+          }
+        </div>
+        <div class="contact-footer pt-3 mt-5">
+          <div class="checkbox">
+            <input type="checkbox" required />
+            <label class="text"
+              >I agree with Terms of Use and Privacy Policy</label
+            >
+          </div>
+          <button type="submit" class="btn" id="sumbit">
+            Send Your Messege
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,44 @@
+.navbar-expand-lg .navbar-nav .nav-link.active {
+  color: black;
+  background-color: #ce7d63;
+}
+.bg-body-tertiary {
+  background-color: #1a1a1a !important;
+}
+nav {
+  border-radius: 15px;
+  margin-top: 23px;
+  font-family: "Roboto", sans-serif;
+  .navbar-toggler {
+    background-color: black;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+    background-color: #ce7d63;
+  }
+  .nav-link[_ngcontent-ng-c193510013] {
+    @media (max-width: 992px) {
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    margin-left: -10px;
+  }
+}
+li {
+  margin-right: 10px;
+}
+.nav-link {
+  border: 1px solid black;
+  background-color: black;
+  color: #81807e;
+  border-radius: 10px;
+  margin-right: 10px;
+  width: 100%;
+  margin-top: 10px;
+  button {
+    margin-left: -9%;
+  }
+}

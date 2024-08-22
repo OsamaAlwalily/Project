@@ -1,0 +1,12 @@
+body {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: black;
+  @media (max-width: 768px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+app-nav {
+  margin-top: 10px;
+}
