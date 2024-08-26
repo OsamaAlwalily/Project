@@ -618,3 +618,56 @@ footer {
     margin-top: 10px;
   }
 }
+
+//Start Card of testmonials
+.card {
+  background-color: #0f0f0f;
+  color: white;
+}
+.card {
+  .button {
+    background-color: #ce7d63;
+  }
+}
+.modal-dialog {
+  .button {
+    background-color: #ce7d63;
+    border: none;
+    color: black;
+  }
+}
+.row {
+  width: 100%;
+  margin: auto;
+  // gap: 3px;
+  .delete {
+    background-color: rgb(209, 0, 0);
+    color: white;
+  }
+  .delete:hover {
+    background-color: rgb(121, 0, 0);
+  }
+  .card1 {
+    border: 2px solid white;
+    background-color: #191919;
+    margin: 10px;
+  }
+  h5,
+  p {
+    text-align: center;
+  }
+}
+.modal-content {
+  background-color: #191919;
+  color: white;
+  .button-x {
+    background-color: #191919;
+    border: none;
+  }
+  .x-button {
+    border: none;
+    color: red;
+    background: transparent;
+  }
+}
+//End Card of testmonials
